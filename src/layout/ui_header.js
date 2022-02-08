@@ -1,4 +1,4 @@
-import { FiHome, FiShoppingBag,FiHeart } from "react-icons/fi";
+import { FiHome, FiShoppingBag, FiHeart } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 
 const menuData = [
@@ -11,7 +11,7 @@ const activeStyle = {
 	transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
 	transitionDuration: "150ms",
 	color: "rgba(238, 156, 167, 2)",
-	backgroundColor: "rgba(238, 156, 167, 0.15)",
+	backgroundColor: "rgba(238, 156, 167, 0.2)",
 };
 
 const Header = () => {
@@ -44,7 +44,7 @@ const Header = () => {
 					</div>
 				</div>
 				<div className="w-1/2 h-full flex justify-end items-center">
-					<button className="rounded-lg w-24 sm:w-28 h-3/4 bg-gradient-to-r from-color-pink-1 to-color-pink-2 text-white font-bold tracking-wider">
+					<button className="rounded-lg w-24 sm:w-28 h-3/4 bg-gradient-to-r from-color-primary-2 to-color-pink-1 transition-all active:bg-color-pink-1 text-white font-bold tracking-wider">
 						Sign Up
 					</button>
 				</div>

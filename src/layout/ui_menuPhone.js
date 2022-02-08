@@ -11,7 +11,7 @@ const activeStyle = {
 	transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
 	transitionDuration: "150ms",
 	color: "rgba(238, 156, 167, 2)",
-	backgroundColor: "rgba(238, 156, 167, 0.15)",
+	backgroundColor: "rgba(238, 156, 167, 0.2)",
 };
 
 const MenuPhone = () => {

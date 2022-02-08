@@ -1,7 +1,13 @@
-import React from 'react';
+import Banner from "../components/banner";
+import LandingPageShop from "../components/landingPageShop";
 
 const HomePage = () => {
-  return <div>home</div>;
+	return (
+		<section className="w-full h-auto">
+			<Banner />
+			<LandingPageShop />
+		</section>
+	);
 };
 
 export default HomePage;
