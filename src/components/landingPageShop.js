@@ -1,5 +1,3 @@
-import React from "react";
-
 const LandingPageShop = () => {
 	return (
 		<div className="p-1 mx-auto mt-3 w-full sm:w-[90%] xl:w-full h-auto">

@@ -28,7 +28,7 @@ const Header = () => {
 					<div className="hidden sm:block w-4/5 h-[60%]">
 						<ul className="flex w-auto h-full">
 							{menuData.map(({ name, path, IconName, exact }) => (
-								<li classname="w-auto h-full">
+								<li className="w-auto h-full" key={path}>
 									<NavLink
 										to={path}
 										exact={exact}

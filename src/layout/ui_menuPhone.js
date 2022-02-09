@@ -37,7 +37,7 @@ const MenuPhone = () => {
 					{menuPhoneData.map(({ name, path, IconName, exact }) => (
 						<li
 							className="rounded-lg w-16 h-12 flex flex-col justify-between items-center"
-							key={name}
+							key={path}
 						>
 							{Ui_IconMenuPhone(path, exact, IconName, name)}
 						</li>
