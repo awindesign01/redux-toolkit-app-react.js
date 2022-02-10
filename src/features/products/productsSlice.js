@@ -5,10 +5,10 @@ export const getAsyncProducts = createAsyncThunk(
 	"products/getAsyncProducts",
 	async (_, { rejectWithValue }) => {
 		try {
-			const res = await axios.get("https://fakestoreapi.com/products");
+			const res = await axios.get("http://localhost:8000/datas");
 			return res.data;
 		} catch (error) {
-			return rejectWithValue("error", error);
+			return rejectWithValue("error", [], error);
 		}
 	},
 );
@@ -16,25 +16,21 @@ export const getAsyncProducts = createAsyncThunk(
 export const ProductsSlice = createSlice({
 	name: "products",
 	initialState: {
-		productsData: [],
 		loading: false,
 		error: null,
+		productsData: [],
 	},
 	reducers: {},
 	extraReducers: (builder) => {
 		// todo comment: extraReducers => get reducers async
 		builder.addCase(getAsyncProducts.fulfilled, (state, action) => {
-			state.productsData.push(action.payload);
+			return { ...state, loading: false, error: null, productsData: action.payload };
 		});
 		builder.addCase(getAsyncProducts.pending, (state, action) => {
-			state.productsData = [];
-			state.loading = true;
-			state.error = null;
+			return { ...state, loading: true, error: null, productsData: [] };
 		});
 		builder.addCase(getAsyncProducts.rejected, (state, action) => {
-			state.productsData = [];
-			state.loading = false;
-			state.error = action.error.message;
+			return { ...state, loading: false, error: action.error, productsData: [] };
 		});
 	},
 });

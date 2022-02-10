@@ -1,0 +1,18 @@
+::-webkit-scrollbar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 10px;
+	height: 100vh;
+	scrollbar-gutter: stable;
+}
+::-webkit-scrollbar-track {
+	height: 100%;
+	width: 100%;
+	background-color: #fafafa;
+}
+::-webkit-scrollbar-thumb {
+	background-image: linear-gradient(#c581e0 0%, rgba(238, 156, 167, 1) 99%);
+	box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+	border-radius: 100px;
+}
