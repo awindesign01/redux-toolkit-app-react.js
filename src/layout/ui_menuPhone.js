@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const menuPhoneData = [
 	{ name: "Home", path: "/", IconName: FiHome, exact: "true" },
-	{ name: "Shop", path: "/shop", IconName: FiShoppingBag },
+	{ name: "Cart", path: "/cart", IconName: FiShoppingBag },
 	{ name: "Support", path: "/support", IconName: FiHeart },
 ];
 const activeStyle = {

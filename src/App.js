@@ -5,7 +5,8 @@ import HomePage from "./pages/ui_homePage";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getAsyncProducts } from "./features/products/productsSlice";
-import NotFound from "./pages/404-notFound";
+import NotFound from "./pages/ui_404-notFound";
+import ProductsDetails from "./components/ui_productsDetails";
 
 function App() {
 	const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function App() {
 				<main className="mx-auto w-[90%] sm:w-full">
 					<Routes>
 						<Route index path="/" element={<HomePage />} />
+						<Route path="/cart" element={<ProductsDetails />} />
 						<Route path="*" element={<NotFound />} />
 					</Routes>
 				</main>
