@@ -1,10 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { FaPlus, FaMinus, FaTrash } from "react-icons/fa";
-import { decrementProduct, incrementProduct } from "../features/products/productsSlice";
 
 const ProductsDetails = () => {
 	const { addToCart } = useSelector((state) => state.productsData);
-	const dispatch = useDispatch();
 	return (
 		<>
 			{addToCart.length === 0 ? (
@@ -31,17 +29,11 @@ const ProductsDetails = () => {
 										<p className="text-gray-400">rates : {i.rating.rate}</p>
 									</div>
 									<div className="w-[30%] h-auto flex justify-between items-center text-white">
-										<button
-											className="rounded-lg w-10 h-10 bg-color-primary-2 transition-all hover:bg-purple-500 grid place-items-center"
-											onClick={() => dispatch(incrementProduct(i.quantity))}
-										>
+										<button className="rounded-lg w-10 h-10 bg-color-primary-2 transition-all hover:bg-purple-500 grid place-items-center">
 											<FaPlus />
 										</button>
 										<p className="text-gray-700">{addToCart.length}</p>
-										<button
-											className="rounded-lg w-10 h-10 bg-color-pink-1 transition-all hover:bg-purple-500 grid place-items-center"
-											onClick={() => dispatch(decrementProduct(i.quantity))}
-										>
+										<button className="rounded-lg w-10 h-10 bg-color-pink-1 transition-all hover:bg-purple-500 grid place-items-center">
 											{addToCart.length <= 1 ? <FaTrash /> : <FaMinus />}
 										</button>
 									</div>
