@@ -5,7 +5,7 @@ export const getAsyncProducts = createAsyncThunk(
 	"products/getAsyncProducts",
 	async (_, { rejectWithValue }) => {
 		try {
-			const res = await axios.get("http://localhost:8000/datas");
+			const res = await axios.get("https://fakestoreapi.com/products");
 			return res.data;
 		} catch (error) {
 			return rejectWithValue("error", [], error);
@@ -21,8 +21,8 @@ export const ProductsSlice = createSlice({
 		productsData: [],
 		addToCart: [],
 	},
+	// todo comment: extraReducers => get reducers async
 	extraReducers: (builder) => {
-		// todo comment: extraReducers => get reducers async
 		builder.addCase(getAsyncProducts.fulfilled, (state, action) => {
 			return { ...state, loading: false, error: null, productsData: action.payload };
 		});
@@ -33,20 +33,13 @@ export const ProductsSlice = createSlice({
 			return { ...state, loading: false, error: action.error, productsData: [] };
 		});
 	},
+	// todo comment: reducers => get reducers sync
 	reducers: {
-		// todo comment: reducers => get reducers sync
 		addToCart: (state, { payload }) => {
 			state.addToCart.push({ ...payload, quantity: 1 });
-		},
-		incrementProduct: (state, { payload }) => {
-			console.log(payload);
-			// state.addToCart.quantity += 1;
-		},
-		decrementProduct: (state, { payload }) => {
-			console.log(payload);
 		},
 	},
 });
 
-export const { addToCart, incrementProduct, decrementProduct } = ProductsSlice.actions;
+export const { addToCart } = ProductsSlice.actions;
 export default ProductsSlice.reducer;
